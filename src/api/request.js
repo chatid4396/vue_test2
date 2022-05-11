@@ -11,8 +11,7 @@ request.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencod
 
 //请求拦截
 request.interceptors.request.use(
-    config => {      
-        console.log(config.url)  
+    config => {
         //post 参数序列化
         if (config.method.toLowerCase() == "post") {
             config.data = QS.stringify(config.data);
