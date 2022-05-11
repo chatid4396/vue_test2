@@ -1,15 +1,12 @@
-import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
-import axios from 'axios';  //引入axios
-import VueAxios from 'vue-axios';  // 引入vue-axios
+import Vue from 'vue';
+import App from './App.vue';
+import router from './router';
 import store from './store/index';
+import request from './api/request';
 
 
 Vue.config.productionTip = false
-Vue.use(VueAxios,axios);  //使用
-
-
+Vue.prototype.$http = request;
 
 new Vue({
   router,

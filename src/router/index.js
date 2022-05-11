@@ -77,13 +77,13 @@ const router = new VueRouter({
 //前置守卫
 router.beforeEach((to, from, next) => {
     //从from跳转到to
+    console.log("前置守卫")
     window.document.title = to.matched[0].meta.title;
     next();
 })
 //后置守卫
 router.afterEach((to, from) => {
-    console.log(to);
-    console.log(from);
+    console.log("后置守卫：从" + from.matched[0].meta.title + "跳转到" + to.matched[0].meta.title); 
 })
 
 
