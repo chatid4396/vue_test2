@@ -28,12 +28,7 @@ export default {
 
     methods: {
         testApi() {
-            // axios.get("api/test")
-            //     .then((response) => {
-            //         console.log(response.data)
-            //     })
-            var str = "test";
-        
+            var str = "test";        
             this.$http.get(`/test/${str}`)
             .then((data) => {
                 console.log(data);
