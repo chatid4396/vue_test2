@@ -1,7 +1,4 @@
-import {get, post} from "./request";
+import request from "./request";
 
-export const Test = () => {
-    return get({
-        url: '/test',
-    })
-}
+//设置接口
+export const test = () => request.get('/test')

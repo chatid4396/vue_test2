@@ -1,18 +1,20 @@
 <template>
     <div>
-        <button @click="test">axios test</button>
+        <button @click="testApi">axios test</button>
+
+        <h1>This is test Api get Msg: {{ testMsg }}</h1>
     </div>
 </template>
 
 <script>
 import axios from 'axios'
-import {Test} from '../api'
+import {test} from '../api'
 export default {
     name: 'Axiostest',
 
     data() {
         return {
-            
+            testMsg: ''
         };
     },
 
@@ -21,13 +23,19 @@ export default {
     },
 
     methods: {
-        async test() {
+        async testApi() {
             // axios.get("api/test")
             //     .then((response) => {
             //         console.log(response.data)
             //     })
-            let a = Test();
-            console.log(a);
+            test()
+            .then((data) => {
+                console.log(data);
+                this.testMsg = data; 
+            })
+            .catch((err) => {
+                console.log(err);
+            });
         }
 
 
