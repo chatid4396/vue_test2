@@ -25,7 +25,11 @@ const routes = [
         },
         children: [
             {
-                path: '/',
+                path: "",
+                component:HomeView,
+            },
+            {
+                path: '/home',
                 name: 'home',
                 meta: {
                     title: "home"
@@ -91,8 +95,19 @@ const routes = [
                 component: () => import('../views/HomeList.vue'),
                 meta: {
                     title: "HomeList"
-                }
-                
+                },
+            },
+            {
+                path: '/homeContent/:id',
+                name: 'homeContent',
+                component: () => import('../views/HomeContent.vue'),
+                // component: {
+                //     content: () => import('../views/HomeContent.vue'),
+                // },
+                meta: {
+                    title: "HomeContent"
+                },
+                props: true,
             }
         
         ]    

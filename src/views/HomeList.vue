@@ -13,7 +13,7 @@
             </el-table-column>
             <el-table-column width="200">
                 <template slot-scope="scope">
-                    <router-link :to="{name: 'context', params: { id: `scope.row.id` }}"> {{ scope.row.title }}</router-link>
+                    <router-link :to="{name: 'homeContent', params: { id: scope.row.id, content: scope.row.content }}"> {{ scope.row.title }}</router-link>
                 </template>
             </el-table-column>
             <el-table-column  width="100">
@@ -31,7 +31,6 @@
 
         data() {
             return {
-                icon: "https://avatars.githubusercontent.com/u/227713?v=4&s=",
                 posts: []
             };
         },
